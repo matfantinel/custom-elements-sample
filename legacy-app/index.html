@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>This is a legacy app that uses Angular 7 custom elements</title>
+        <script src="../angular-elements-sample/CustomElementsSample.js"></script>
+
+        <style>
+            button {
+                background-color: red;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <custom-button label="Legacy app label"></custom-button>
+        <span id="counter"></span><span> clicks!</span>
+
+        <script>
+            const button = document.querySelector('custom-button');
+            button.addEventListener('action', event => {
+                document.getElementById('counter').innerHTML = event.detail.clicksCount;
+            });
+        </script>
+    </body>
+</html>
